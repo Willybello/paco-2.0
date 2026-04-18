@@ -2,8 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Paco 2.0 - Ayuda para trabajadoras y trabajadores</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#b91c1c" />
+  <meta name="description" content="Paco 2.0 - Asistente virtual para trabajadoras y trabajadores. Orientación informativa sobre derechos y problemas en el trabajo." />
+
+  <!-- iOS PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Paco 2.0" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
   <style>
     * { box-sizing: border-box; }
 
@@ -107,6 +121,22 @@
       background: white;
       font-size: .92rem;
     }
+
+    .install-btn {
+      margin-left: auto;
+      padding: 6px 12px;
+      border: 1px solid #b91c1c;
+      border-radius: 999px;
+      background: white;
+      color: #b91c1c;
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .install-btn:hover { background: #fee2e2; }
+
+    html[dir="rtl"] .install-btn { margin-left: 0; margin-right: auto; }
 
     .chat-box {
       height: 460px;
@@ -298,6 +328,7 @@
             <option value="uk">Українська</option>
             <option value="ar">العربية</option>
           </select>
+          <button id="installBtn" class="install-btn" type="button" hidden data-i18n="installBtn">Instalar app</button>
         </div>
 
         <div id="chat" class="chat-box"></div>
@@ -373,7 +404,9 @@
         errTech: "Se ha producido un problema técnico",
         errNet: "Error de red. Revisa tu conexión e inténtalo de nuevo.",
         retry: "Inténtalo de nuevo en un momento.",
-        noReply: "No se ha recibido respuesta."
+        noReply: "No se ha recibido respuesta.",
+        installBtn: "Instalar app",
+        installed: "App instalada"
       },
       it: {
         htmlTitle: "Paco 2.0 - Aiuto per lavoratori e lavoratrici",
@@ -403,7 +436,9 @@
         errTech: "Si è verificato un problema tecnico",
         errNet: "Errore di rete. Controlla la connessione e riprova.",
         retry: "Riprova tra poco.",
-        noReply: "Nessuna risposta ricevuta."
+        noReply: "Nessuna risposta ricevuta.",
+        installBtn: "Installa app",
+        installed: "App installata"
       },
       "ca-valencia": {
         htmlTitle: "Paco 2.0 - Ajuda per a treballadores i treballadors",
@@ -433,7 +468,9 @@
         errTech: "S'ha produït un problema tècnic",
         errNet: "Error de xarxa. Revisa la connexió i torna a provar.",
         retry: "Torna a provar en un moment.",
-        noReply: "No s'ha rebut cap resposta."
+        noReply: "No s'ha rebut cap resposta.",
+        installBtn: "Instal·lar app",
+        installed: "App instal·lada"
       },
       en: {
         htmlTitle: "Paco 2.0 - Help for workers",
@@ -463,7 +500,9 @@
         errTech: "A technical problem occurred",
         errNet: "Network error. Check your connection and try again.",
         retry: "Try again in a moment.",
-        noReply: "No response received."
+        noReply: "No response received.",
+        installBtn: "Install app",
+        installed: "App installed"
       },
       fr: {
         htmlTitle: "Paco 2.0 - Aide pour les travailleurs et travailleuses",
@@ -493,7 +532,9 @@
         errTech: "Un problème technique est survenu",
         errNet: "Erreur réseau. Vérifie ta connexion et réessaie.",
         retry: "Réessaie dans un instant.",
-        noReply: "Aucune réponse reçue."
+        noReply: "Aucune réponse reçue.",
+        installBtn: "Installer l'app",
+        installed: "App installée"
       },
       pt: {
         htmlTitle: "Paco 2.0 - Ajuda para trabalhadoras e trabalhadores",
@@ -523,7 +564,9 @@
         errTech: "Ocorreu um problema técnico",
         errNet: "Erro de rede. Verifica a tua ligação e tenta novamente.",
         retry: "Tenta novamente daqui a pouco.",
-        noReply: "Nenhuma resposta recebida."
+        noReply: "Nenhuma resposta recebida.",
+        installBtn: "Instalar app",
+        installed: "App instalada"
       },
       ro: {
         htmlTitle: "Paco 2.0 - Ajutor pentru lucrători și lucrătoare",
@@ -553,7 +596,9 @@
         errTech: "A apărut o problemă tehnică",
         errNet: "Eroare de rețea. Verifică conexiunea și încearcă din nou.",
         retry: "Încearcă din nou imediat.",
-        noReply: "Niciun răspuns primit."
+        noReply: "Niciun răspuns primit.",
+        installBtn: "Instalează aplicația",
+        installed: "Aplicație instalată"
       },
       bg: {
         htmlTitle: "Paco 2.0 - Помощ за работници и работнички",
@@ -583,7 +628,9 @@
         errTech: "Възникна техническа грешка",
         errNet: "Грешка в мрежата. Провери връзката и опитай отново.",
         retry: "Опитай отново след малко.",
-        noReply: "Не е получен отговор."
+        noReply: "Не е получен отговор.",
+        installBtn: "Инсталирай приложението",
+        installed: "Приложението е инсталирано"
       },
       ru: {
         htmlTitle: "Paco 2.0 - Помощь работникам",
@@ -613,7 +660,9 @@
         errTech: "Возникла техническая проблема",
         errNet: "Ошибка сети. Проверь соединение и попробуй снова.",
         retry: "Попробуй ещё раз через мгновение.",
-        noReply: "Ответ не получен."
+        noReply: "Ответ не получен.",
+        installBtn: "Установить приложение",
+        installed: "Приложение установлено"
       },
       uk: {
         htmlTitle: "Paco 2.0 - Допомога працівникам",
@@ -643,7 +692,9 @@
         errTech: "Виникла технічна проблема",
         errNet: "Помилка мережі. Перевір з'єднання та спробуй ще раз.",
         retry: "Спробуй ще раз через мить.",
-        noReply: "Відповідь не отримано."
+        noReply: "Відповідь не отримано.",
+        installBtn: "Встановити застосунок",
+        installed: "Застосунок встановлено"
       },
       ar: {
         htmlTitle: "Paco 2.0 - مساعدة للعاملات والعمال",
@@ -673,7 +724,9 @@
         errTech: "حدثت مشكلة تقنية",
         errNet: "خطأ في الشبكة. تحقق من اتصالك وحاول مرة أخرى.",
         retry: "حاول مرة أخرى بعد قليل.",
-        noReply: "لم يتم تلقي أي رد."
+        noReply: "لم يتم تلقي أي رد.",
+        installBtn: "تثبيت التطبيق",
+        installed: "تم تثبيت التطبيق"
       }
     };
 
@@ -803,6 +856,45 @@
     langSelect.value = DEFAULT_LANG;
     applyLang(DEFAULT_LANG);
     showInitialGreeting();
+
+    // ====== PWA: Service Worker registration ======
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+      });
+    }
+
+    // ====== PWA: Install prompt ======
+    const installBtn = document.getElementById('installBtn');
+    let deferredPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.hidden = false;
+    });
+
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      installBtn.disabled = true;
+      deferredPrompt.prompt();
+      try {
+        await deferredPrompt.userChoice;
+      } catch (_) {}
+      deferredPrompt = null;
+      installBtn.hidden = true;
+      installBtn.disabled = false;
+    });
+
+    window.addEventListener('appinstalled', () => {
+      installBtn.hidden = true;
+      deferredPrompt = null;
+    });
+
+    // Nascondi il bottone se già installato come standalone
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+      installBtn.hidden = true;
+    }
   </script>
 </body>
 </html>
